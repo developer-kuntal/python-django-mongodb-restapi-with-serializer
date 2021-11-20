@@ -1,0 +1,30 @@
+# POST http://127.0.0.1:8000/department
+
+# {
+#     "DepartmentName":"CSE"
+# }
+
+# POST http://127.0.0.1:8000/employee
+
+# {
+#     "EmployeeName":"Sekhar",
+#     "Department":"IT",
+#     "DateOfJoining":"2012-04-13",
+#     "PhotoFileName":"annonymus.png"
+# }
+
+# POST http://127.0.0.1:8000/employee/savefile
+# Content-Disposition: form-data; name="image"; filename="annonymus.png"
+# Content-Type: image/png;
+
+# {
+#     "file":"annonymus.png"
+# }
+
+
+POST http://127.0.0.1:8000/employee/savefile
+Content-Type: multipart/form-data; boundary=----MyBoundary;
+
+{
+    "file":"annonymus.png"
+}
